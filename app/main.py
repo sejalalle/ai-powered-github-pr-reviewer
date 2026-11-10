@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from app.database import engine, Base
 from app import models
 
-from app.routers import reviews
+from app.routers import reviews, github
 
 
 # Create database tables
@@ -21,6 +21,7 @@ app = FastAPI(
 
 # Register routers
 app.include_router(reviews.router)
+app.include_router(github.router)
 
 
 # Home endpoint
